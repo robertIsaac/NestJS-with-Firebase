@@ -10,6 +10,7 @@ const createFunction = async (expressInstance): Promise<void> => {
     AppModule,
     new ExpressAdapter(expressInstance),
   );
+  app.enableCors();
   await app.init();
 };
 export const api = functions.https.onRequest(async (request, response) => {
